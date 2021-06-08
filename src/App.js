@@ -11,7 +11,8 @@ import { Header, Tab, Container } from 'semantic-ui-react';
 /************************************************/
 /*        Step 3.1 Code goes here               */
 /************************************************/
-
+// choose a data domain for saving files in MySky
+const dataDomain = 'localhost';
 /************************************************/
 /*        Step 1.2 Code goes here               */
 /************************************************/
@@ -115,46 +116,46 @@ function App() {
   };
 
   const panes = [
-    {
-      menuItem: 'Part 1: File Upload',
-      render: () => (
-        <Tab.Pane>
-          <WorkshopForm {...formProps} />
-        </Tab.Pane>
-      ),
-    },
-    {
-      menuItem: 'Part 2: Folder Upload',
-      render: () => (
-        <Tab.Pane>
-          <WorkshopForm {...formProps} />
-        </Tab.Pane>
-      ),
-    },
-    {
-      menuItem: 'Part 3: SkyDB',
-      render: () => (
-        <Tab.Pane>
-          <WorkshopForm {...formProps} />
-        </Tab.Pane>
-      ),
-    },
+    // {
+    //   menuItem: 'Part 1: File Upload',
+    //   render: () => (
+    //     <Tab.Pane>
+    //       <WorkshopForm {...formProps} />
+    //     </Tab.Pane>
+    //   ),
+    // },
+    // {
+    //   menuItem: 'Part 2: Folder Upload',
+    //   render: () => (
+    //     <Tab.Pane>
+    //       <WorkshopForm {...formProps} />
+    //     </Tab.Pane>
+    //   ),
+    // },
+    // {
+    //   menuItem: 'Part 3: SkyDB',
+    //   render: () => (
+    //     <Tab.Pane>
+    //       <WorkshopForm {...formProps} />
+    //     </Tab.Pane>
+    //   ),
+    // },
   ];
 
   return (
     <Container>
-      <Header
-        as="h1"
-        content="Skynet Workshop App"
-        textAlign="center"
-        style={{ marginTop: '1em', marginBottom: '1em' }}
+      {/* <Header
+        // as="h1"
+        // content="Skynet Workshop Appbbb"
+        // textAlign="center"
+        // style={{ marginTop: '1em', marginBottom: '1em' }}
       />
       <Tab
-        menu={{ fluid: true, vertical: true, tabular: true }}
-        panes={panes}
-        onTabChange={handleSelectTab}
-        activeIndex={activeTab}
-      />
+        // menu={{ fluid: true, vertical: true, tabular: true }}
+        // panes={panes}
+        // onTabChange={handleSelectTab}
+        // activeIndex={activeTab}
+      /> */}
     </Container>
   );
 }
