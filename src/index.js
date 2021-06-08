@@ -1,5 +1,6 @@
 // Custom css
 import './index.css';
+import './style.css';
 
 // Semanti-ui CSS
 import 'semantic-ui-css/semantic.min.css';
