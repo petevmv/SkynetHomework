@@ -1,6 +1,5 @@
 // Custom css
 import './index.css';
-import './style.css';
 
 // Semanti-ui CSS
 import 'semantic-ui-css/semantic.min.css';
@@ -10,7 +9,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Main from './main';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
