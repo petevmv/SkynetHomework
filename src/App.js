@@ -47,10 +47,22 @@ const contentRecord = new ContentRecordDAC();
 
 
 /*****/
-
+const LOCAL_STORAGE_KEY = 'ToDoList'
 function App() {
   // To do list 
-  const [toDoList, setToDoList] = useState(data);
+const [toDoList, setToDoList] = useState([]);
+
+useEffect(() => {
+  const storageTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+  if(storageTodos) {
+    setToDoList(storageTodos);
+  }
+},[]);
+
+useEffect(()=> {
+  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(toDoList));
+},[toDoList]);  
+
 
   const handleToggle = (id) => {
     let mapped = toDoList.map(task => {
@@ -407,28 +419,28 @@ await loadData();
 
   const panes = [
     {
-      menuItem: 'Part 1: File Upload',
-      render: () => (
-        <Tab.Pane>
-          <WorkshopForm {...formProps} />
-        </Tab.Pane>
-      ),
+      // menuItem: 'Part 1: File Upload',
+      // render: () => (
+      //   <Tab.Pane>
+      //     <WorkshopForm {...formProps} />
+      //   </Tab.Pane>
+      // ),
     },
     {
-      menuItem: 'Part 2: Folder Upload',
-      render: () => (
-        <Tab.Pane>
-          <WorkshopForm {...formProps} />
-        </Tab.Pane>
-      ),
+      // menuItem: 'Part 2: Folder Upload',
+      // render: () => (
+      //   <Tab.Pane>
+      //     <WorkshopForm {...formProps} />
+      //   </Tab.Pane>
+      // ),
     },
     {
-      menuItem: 'Part 3: MySky',
-      render: () => (
-        <Tab.Pane>
-          <WorkshopForm {...formProps} />
-        </Tab.Pane>
-      ),
+      // menuItem: 'Part 3: MySky',
+      // render: () => (
+      //   <Tab.Pane>
+      //     <WorkshopForm {...formProps} />
+      //   </Tab.Pane>
+      // ),
     },
     {
       menuItem: 'Part 4: Content Record DAC',
